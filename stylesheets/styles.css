@@ -40,6 +40,11 @@ h1 {
   border-bottom: 2px solid #444444;
 }
 
+section a{
+  color: white;
+  text-decoration: none;
+}
+
 h2 {
   color: #cccccc;
   padding-bottom: 0.5rem;
@@ -125,7 +130,7 @@ nav a:hover {
 
 .tab-content.active {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   opacity: 1;
 }
