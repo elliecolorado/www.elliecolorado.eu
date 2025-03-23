@@ -45,6 +45,10 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+.card a{
+  color: white;
+}
+
 section {
   margin-bottom: 2rem;
   padding: 0;
