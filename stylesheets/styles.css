@@ -130,7 +130,7 @@ nav a:hover {
 
 .tab-content.active {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   opacity: 1;
 }
