@@ -22,11 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
         const title = doc.querySelector('title').textContent;
         const description = doc.querySelector('meta[name="description"]').getAttribute('content');
-        const tags = doc.querySelector('meta[name="tags"]').getAttribute('content').split(',').map(tag => tag.trim());
         const date = doc.querySelector('meta[name="date"]').getAttribute('content');
         const url = file;
   
-        blogPosts.push({ title, description, tags, date, url });
+        blogPosts.push({ title, description, date, url });
       } catch (error) {
         console.error(error);
       }
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     posts.forEach(post => {
       const card = document.createElement('div');
       card.classList.add('card');
-      card.setAttribute('data-tags', post.tags.join(' '));
       card.setAttribute('data-date', post.date);
       card.innerHTML = `
         <div class="card-content">
