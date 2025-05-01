@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const blogPostsContainer = document.getElementById('blog-posts');
   const sortSelect = document.getElementById('sort');
+  const filterTagsInput = document.getElementById('filter-tags');
+  const applyFiltersButton = document.getElementById('apply-filters');
 
   const fetchPosts = async () => {
     const postFiles = [
@@ -22,10 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
         const title = doc.querySelector('title').textContent;
         const description = doc.querySelector('meta[name="description"]').getAttribute('content');
+        const tags = doc.querySelector('meta[name="tags"]').getAttribute('content').split(',').map(tag => tag.trim());
         const date = doc.querySelector('meta[name="date"]').getAttribute('content');
         const url = file;
   
-        blogPosts.push({ title, description, date, url });
+        blogPosts.push({ title, description, tags, date, url });
       } catch (error) {
         console.error(error);
       }
@@ -34,17 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
     return blogPosts;
   };
   
+
   const renderPosts = (posts) => {
     blogPostsContainer.innerHTML = '';
     posts.forEach(post => {
       const card = document.createElement('div');
       card.classList.add('card');
+      card.setAttribute('data-tags', post.tags.join(' '));
       card.setAttribute('data-date', post.date);
       card.innerHTML = `
         <div class="card-content">
           <h2>${post.title}</h2>
           <p>${post.description}</p>
           <p><small>${post.date}</small></p>
+          <div class="tags">
+            ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
+          </div>
         </div>
       `;
       card.addEventListener('click', () => {
@@ -62,7 +70,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const filterPostsByTags = (posts, tagsFilter) => {
+    return posts.filter(post => {
+      return tagsFilter.every(tag => post.tags.includes(tag));
+    });
+  };
+
+  const applyFilters = async () => {
+    const sortOrder = sortSelect.value;
+    const tagsFilter = filterTagsInput.value.split(',').map(tag => tag.trim()).filter(tag => tag);
+
+    const blogPosts = await fetchPosts();
+    let filteredPosts = [...blogPosts];
+    filteredPosts = sortPosts(filteredPosts, sortOrder);
+    filteredPosts = filterPostsByTags(filteredPosts, tagsFilter);
+
+    renderPosts(filteredPosts);
+  };
+
   sortSelect.addEventListener('change', applyFilters);
+  applyFiltersButton.addEventListener('click', applyFilters);
 
   // Render initial posts
   fetchPosts().then(posts => renderPosts(sortPosts(posts, 'newest')));
