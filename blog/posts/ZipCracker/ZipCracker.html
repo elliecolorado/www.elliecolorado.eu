@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZipCracker</title>
+  <meta name="description"
+    content="Script para realizar fuerza bruta sobre archivos ZIP con una lista de contraseñas." />
+  <meta name="tags" content="zip cracker, python, zip, fuerza bruta" />
+  <meta name="date" content="2025-03-23" />
+  <link rel="stylesheet" href="../../stylesheets/styles.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="header-text">
+        <a href="../../index.html">
+          <h1>Mi Blog</h1>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <article class="container">
+    <h1>ZipCracker</h1>
+    <p>Script para realizar fuerza bruta sobre archivos ZIP con una lista de contraseñas.</p>
+    <p>En el mundo de la ciberseguridad, ya se conocen herramientas para crackear archivos compresos, como
+      JohnTheRipper, para crackear un archivo, ya sea encontrado en un Capture The Flag o en una imagen de disco durante
+      un anáisis forense. Aún así, quise probar mi suerte haciendo un script de Python especificamente para archivos
+      .zip. </p>
+    <p>Esta necesidad surgió durante un CTF del Immune Institute en el I.E.S. Azarquiel los pasados 20 y 21 de marzo, en
+      el había diversos retos (criptografía, reversing, etc.). Uno de ellos tenía el siguiente enunciado:</p>
+    <p>Parece que alguien desde una cuenta anónima está intentado ayudar en la investigación y os ha enviado otro
+      fichero pcap. Lo ha capturado desde alguna clase de informática que se dio en el instituto.
+
+      Pregunta:
+      Hay varias tramas que se corresponden a una subida FTP. Nos piden encontrar el contenido de lo que se ha
+      descargado para proseguir en la investigación. Se trata de un fichero que se han descargado.</p>
+    <p>Junto al que daba una captura de red. Al analizarlo en Wireshark ,se consiguieron extraer una lista de
+      contraseñas y un archivo zip en el que estaba la bandera. Dado que las contraseñas eran demasiadas como para hacer
+      un ataque de fuerza bruta a mano, se realizó el script para que hiciese el trabajo rápidamente. <a href="ZipCracker.py" download="ZipCracker">Aqui está el codigo.</a></p>
+
+      <p></p>
+
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <p><a href="mailto:contacto@elliecolorado.eu" target="_blank">contacto@elliecolorado.eu</a></p>
+      <p><a href="tel:+34622018123" target="_blank">(+34) 622 01 81 23</a></p>
+      <p>
+        <a class="footer-logo" href="https://www.linkedin.com/in/elliecolorado" target="_blank"><img
+            src="../../images/logos/LogoLinkedin.png" /></a>
+        <a class="footer-logo" href="https://codeberg.org/elliecolorado" target="_blank"><img
+            src="../../images/logos/LogoCodeberg.png" /></a>
+        <a class="footer-logo" href="https://github.com/elliecolorado" target="_blank"><img
+            src="../../images/logos/LogoGithub.png" /></a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
