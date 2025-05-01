@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="card-content">
           <h2>${post.title}</h2>
           <p>${post.description}</p>
-          <p><small>${new Date(post.date).toLocaleDateString()}</small></p>
+          <p><small>${post.date}</small></p>
           <div class="tags">
             ${post.tags.map(tag => `<span>${tag}</span>`).join('')}
           </div>
