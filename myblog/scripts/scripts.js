@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="card-content">
           <h2>${post.title}</h2>
           <p>${post.description}</p>
-          <p><small>${post.date}</small></p>
+          <p>${post.date}</p>
         </div>
       `;
       card.addEventListener('click', () => {
