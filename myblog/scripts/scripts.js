@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   const blogPostsContainer = document.getElementById('blog-posts');
-  const sortSelect = document.getElementById('sort');
-  const applyFiltersButton = document.getElementById('apply-filters');
 
   const fetchPosts = async () => {
     const postFiles = [
@@ -63,8 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return order === 'newest' ? dateB - dateA : dateA - dateB;
     });
   };
-
-  sortSelect.addEventListener('change', applyFilters);
 
   // Render initial posts
   fetchPosts().then(posts => renderPosts(sortPosts(posts, 'newest')));
