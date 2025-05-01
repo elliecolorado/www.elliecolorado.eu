@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="images/IconoPagina.ico" type="image/x-icon" />
   <link rel="stylesheet" href="../stylesheets/styles.css" />
   <link rel="icon" href="images/IconoPagina.ico" type="image/x-icon" />
-  <title>Ellie Colorado - Scripts</title>
+  <title>Ellie Colorado - Blog</title>
 </head>
 
 <body>
@@ -15,29 +15,35 @@
   <header>
     <div class="header-content">
       <div class="header-text">
-        <a href="../index.html"><h2>Página principal</h2></a>
-        <h1>Mis scripts</h1>
+        <a href="../index.html"><h1>Página principal</h1></a>
+        <p>Bienvenido a mi blog. Aquí iré creando posts sobre mis actividades o mis opiniones, principalmente sobre
+          desarrollo y ciberseguridad.</p>
       </div>
     </div>
   </header>
 
   <div class="container">
 
-    <section class="tab-content active">
-
-      <div class="card">
-        <h2>ZipCracker</h2>
-        <p>Script para realizar fuerza bruta sobre archivos ZIP con una lista de contraseñas.</p>
-        <a href="files\ZipCracker.py" download="ZipCracker">Descargar</a>
+    <section class="filters-section">
+      <div class="filters">
+        <select id="sort">
+          <option value="newest">Más reciente</option>
+          <option value="oldest">Más antiguo</option>
+        </select>
+        <input type="text" id="filter-tags" placeholder="Tags (Ej: python, zip)">
+        <button id="apply-filters">Aplicar filtros</button>
       </div>
+    </section>
 
+    <section id="blog-posts" class="tab-content active">
+      <!-- Las tarjetas se renderizarán aquí -->
     </section>
 
   </div>
 
   <footer>
     <div class="footer-content">
-      <p><a href="mailto:contacto@elliecolorado.eu" target="_blank">contacto@elliecolorado.eu</a></p>
+      <p><a href="mailto:elliecolorado@tutamail.com" target="_blank">elliecolorado@tutamail.com</a></p>
       <p><a href="tel:+34622018123" target="_blank">(+34) 622 01 81 23</a></p>
       <p>
         <a class="footer-logo" href="https://www.linkedin.com/in/elliecolorado" target="_blank"><img
@@ -50,6 +56,7 @@
     </div>
   </footer>
 
+  <script src="scripts/scripts.js"></script>
 
 </body>
 

@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="images/IconoPagina.ico" type="image/x-icon" />
   <link rel="stylesheet" href="../stylesheets/styles.css" />
   <link rel="icon" href="images/IconoPagina.ico" type="image/x-icon" />
-  <title>Ellie Colorado - Blog</title>
+  <title>Ellie Colorado - Mis scripts</title>
 </head>
 
 <body>
@@ -15,36 +15,29 @@
   <header>
     <div class="header-content">
       <div class="header-text">
-        <a href="../index.html"><h2>Página principal</h2></a>
-        <h1>Ellie Colorado</h1>
-        <p>Bienvenido a mi blog. Aquí iré creando posts sobre mis actividades o mis opiniones, principalmente sobre
-          desarrollo y ciberseguridad.</p>
+        <a href="../index.html"><h1>Página principal</h1></a>
+        <p>En esta página tengo un listado de los scripts que desarrollado personalmente.</p>
       </div>
     </div>
   </header>
 
   <div class="container">
 
-    <section class="filters-section">
-      <div class="filters">
-        <select id="sort">
-          <option value="newest">Más reciente</option>
-          <option value="oldest">Más antiguo</option>
-        </select>
-        <input type="text" id="filter-tags" placeholder="Tags (Ej: python, zip)">
-        <button id="apply-filters">Aplicar filtros</button>
-      </div>
-    </section>
+    <section class="tab-content active">
 
-    <section id="blog-posts" class="tab-content active">
-      <!-- Las tarjetas se renderizarán aquí -->
+      <div class="card">
+        <h2>ZipCracker</h2>
+        <p>Script para realizar fuerza bruta sobre archivos ZIP con una lista de contraseñas.</p>
+        <a href="files\ZipCracker.py" download="ZipCracker">Descargar</a>
+      </div>
+
     </section>
 
   </div>
 
   <footer>
     <div class="footer-content">
-      <p><a href="mailto:contacto@elliecolorado.eu" target="_blank">contacto@elliecolorado.eu</a></p>
+      <p><a href="mailto:elliecolorado@tutamail.com" target="_blank">elliecolorado@tutamail.com</a></p>
       <p><a href="tel:+34622018123" target="_blank">(+34) 622 01 81 23</a></p>
       <p>
         <a class="footer-logo" href="https://www.linkedin.com/in/elliecolorado" target="_blank"><img
@@ -57,7 +50,6 @@
     </div>
   </footer>
 
-  <script src="scripts/scripts.js"></script>
 
 </body>
 
