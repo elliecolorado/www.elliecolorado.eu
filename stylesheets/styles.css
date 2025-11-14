@@ -71,7 +71,7 @@ nav ul {
 }
 
 nav li {
-  flex-grow: 1;
+  flex-grow: 0.158;
   text-align: center;
 }
 
